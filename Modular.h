@@ -6,7 +6,7 @@ public:
 
 	int mod;
 
-	modular();
+	modular(int modul = 256);
 
 	int suma(int, int);
 

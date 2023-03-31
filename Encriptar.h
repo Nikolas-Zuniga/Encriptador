@@ -9,20 +9,15 @@ class encriptar {
 public:
 	int clave;
 	modular calcular;
-	string nameArchivo;
 
 	encriptar();
 
 	void setClave(int);
 
-	string lectura();
-
 	char cambiar(char);
 
-	void escribir(string);
+	void escribir(string,string);
 
-	void reescribir(string);
-
-	string desencriptar();
+	string encriptadura(string);
 
 };

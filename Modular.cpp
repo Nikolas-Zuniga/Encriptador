@@ -1,12 +1,11 @@
 #include <iostream>
-#include <cmath>
 #include "modular.h"
 using namespace std;
 
 //clase modular
 
-modular::modular() {
-    mod = 256;
+modular::modular(int modul) {
+    mod = modul;
 }
 
 int modular::suma(int a, int b) {
@@ -15,10 +14,7 @@ int modular::suma(int a, int b) {
 
 int modular::resta(int a, int b) {
     int help = a - b;
-    //cout << "a=" << a << "b=" << b << "\n";
-    for (; help < 0; help = help + mod) {
-        //cout << help << "\n";
-    }
+    for (; help < 0; help = help + mod) {}
     int resp = help % mod;
     return resp;
 }
@@ -35,16 +31,13 @@ int modular::inverso(int n) {
         q = m2 / n;
         r = m2 % n;
         c = resta(a, q * b);
-        cout << "a = " << a << " b = " << b << " q = " << q << " r = " << r << " c = " << c << "\n";
+        //cout << "a = " << a << " b = " << b << " q = " << q << " r = " << r << " c = " << c << "\n";
         if (r == 1) {
             return c;
-            //cout << "El inverso es: " << c << "mod" << mod;
-            break;
         }
         else if (r == 0) {
-            return 0;
             cout << "NO hay inverso\n";
-            break;
+            return 0;
         }
         else {
             m2 = n;
@@ -54,8 +47,6 @@ int modular::inverso(int n) {
             continue;
         }
     }
-
-
 }
 
 modular::~modular() {}
